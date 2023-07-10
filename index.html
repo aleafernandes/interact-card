@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor Challenge | Interactive Card</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card-group">
+            <div class="card">
+                <img class="card-logo" src="/images/card-logo.svg">
+                <div id="card-number">
+                    0000 0000 0000 0000
+                </div>
+                <div class="card-bottom">
+                    <div id="card-name">
+                        Jane Appleseed
+                    </div>
+                    <div id="card-date">
+                        00/00
+                </div>
+            </div>
+            </div>
+            <div class="card-back" id="card-back">
+                000
+            </div>
+        </div>
+        
+
+        <div class="form" id="unfilled-form">
+            <label for="cardholder">Cardholder Name</label>
+            <input type="text" id="cardholder" name="cardholder" placeholder="e.g. Jane Appleseed" oninput="nameUpdate()" maxlength="20">
+            <p id="errorMsg">Please use a valid name</p>
+            <label for="cardnumber">Card Number</label>
+            <input type="text" id="cardnumber" name="cardnumber" placeholder="e.g. 1234 5678 9123 0000" oninput='numberUpdate()' maxlength="16">
+            <p id="card-number-error">Please insert only numbers</p>
+            <div class="extra-data">
+                <div class="data-card">
+                    <div>
+                        <label class="labels" for="expiredateM">Exp. Date (MM/YY) </label>
+                        <input type="text" id="expiredateM" name="expiredate" placeholder="MM" oninput='dateUpdate()' maxlength="2">
+                        <input type="text" id="expiredateY" name="expiredate" placeholder="YY" oninput='dateUpdate()' maxlength="2">
+                        <p id="expiryError">Insert a valid date</p>
+                    </div>
+                    <div>
+                        <label class="labels" for="cvcnumber">CVC </label>
+                        <input type="text" id="cvcnumber" name="cvcnumber" placeholder="e.g. 123" oninput='codeUpdate()' maxlength="3">
+                        <p id="codeError">Insert a valid code</p>
+                    </div>
+                </div>
+            </div>
+
+            <button id="submit" onclick="sending()">Confirm</button>
+         
+        </div>
+
+        <div class="completed-form" id="filled-form">
+            <img src="/images/icon-complete.svg">
+            <h2>Thank you!</h2>
+            <p>We've added your card details</p>
+             <button id="continue">Continue</button>
+        </div>
+
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw/hub" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="https://github.com/aleafernandes">Alexandre Fernandes</a>.
+        </div>
+    </div>
+
+
+</body>
+<script src="script.js"></script>
+
+</html>
